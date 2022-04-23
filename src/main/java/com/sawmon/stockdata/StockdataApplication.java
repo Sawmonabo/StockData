@@ -114,7 +114,7 @@ public class StockdataApplication
 		System.out.println("5 - Quit");
 
 		/***************************************************/
-		/***************************************************/
+
 
 
 		Scanner scan = new Scanner(System.in);
