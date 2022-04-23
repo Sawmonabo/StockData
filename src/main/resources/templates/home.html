@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Stock Data Finder - YahooFinance API</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+     <table class="table">
+     
+      <tr>
+        <th>Company </th>
+        <th>Stock Price</th>
+        <th>Percent Change </th>
+        <th>Mean 200 Day </th>
+        <th>Dividend </th>
+      </tr>
+      
+      <tr th:each="StockStat : ${StockStats}">
+        <td th:text="${StockStat.companyName}"></td>
+        <td th:text="${StockStat.stockPrice}">0.00</td>
+        <td th:text="${StockStat.percentChange}">0.00</td>
+        <td th:text="${StockStat.mean200DayPercent}">0.00</td>
+        <td th:text="${StockStat.dividend}">0.00</td>
+      </tr>
+      
+    </table>
+
+  </body>
+
+</html>
