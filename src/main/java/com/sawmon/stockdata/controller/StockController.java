@@ -1,36 +1,21 @@
-/*
-package com.sawmon.stockdata.controller;
-
-import java.util.List;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import com.sawmon.stockdata.StockdataApplication;
-import com.sawmon.stockdata.model.StockData;
-
-@Controller
-public class StockController
-{
-//	@Autowired
-//	StockdataApplication stockdataApplication;
-
-	
-	@GetMapping("/")
-	public String home(Model model)
-	{
-		StockdataApplication SDA = new StockdataApplication();
-		List<StockData> stocks = SDA.getAllStockStats();
-		
-		stocks.forEach(stock -> {
-			model.addAttribute("StockStats", stock);
-			
-		});
-		return "home";
-	}
-
-	
-
-}
-*/
+//package com.sawmon.stockdata.controller;
+//
+//import com.sawmon.stockdata.model.StockData;
+//import com.sawmon.stockdata.service.StockService;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RestController;
+//
+//import java.util.List;
+//
+//@RestController
+//@RequestMapping("api/v1/stocks")
+//public class StockController
+//{
+//
+//    private final StockService stockService;
+//    public List<StockData> fetchAllStockData()
+//    {
+//        return stockService.getAllStockData();
+//
+//    }
+//}
