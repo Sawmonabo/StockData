@@ -5,6 +5,7 @@ import com.sawmon.stockdata.repository.StockDataRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @AllArgsConstructor
@@ -19,13 +20,18 @@ public class StockRepoService
         return stockDataRepository.findAll();
     }
 
-    public List<StockData> saveAllStocks(List<StockData> stocks)
+    public StockData insertStockData(StockData stockData)
     {
-        return stockDataRepository.saveAll(stocks);
+        return stockDataRepository.save(stockData);
+    }
+
+    public void saveAllStocks(List<StockData> stocks)
+    {
+         stockDataRepository.saveAll(stocks);
     }
 
     public void deleteStocks(List stocks)
     {
-        stockDataRepository.deleteAllById(stocks);
+        stockDataRepository.deleteAllById((stocks));
     }
 }

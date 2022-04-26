@@ -10,7 +10,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import org.springframework.stereotype.Service;
 import com.sawmon.stockdata.model.StockWrapper;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
+import static java.util.concurrent.TimeUnit.MINUTES;
 
 @Service
 public class RefreshService 
@@ -19,7 +19,7 @@ public class RefreshService
 	
 	private static final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 	
-	private static final Duration refreshPeriod = Duration.ofSeconds(30);
+	private static final Duration refreshPeriod = Duration.ofMinutes(5);
 	
 	public RefreshService()
 	{
@@ -54,7 +54,7 @@ public class RefreshService
 						stocksToRefresh.remove(stock);
 						stocksToRefresh.put(stock.withLastAccessed(LocalDateTime.now()), true);
 					}
-				}), 0, 15, SECONDS);
+				}), 0, 5, MINUTES);
 	}
 
 }

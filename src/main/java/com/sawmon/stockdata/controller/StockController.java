@@ -12,27 +12,23 @@ import java.util.List;
 @AllArgsConstructor
 public class StockController
 {
-
     private final StockRepoService stockRepoService;
     @GetMapping
     public List<StockData> fetchAllStockData()
     {
         return stockRepoService.getAllStocks();
-
     }
-//
-//    public List<StockData> updateAllStockData()
-//    {
-//        return stockRepoService.saveAllStocks();
-//
-//    }
-//
-    @DeleteMapping
-    public String deleteAllStockData(@PathVariable List id)
+
+    @PostMapping("/addStock")
+    public StockData addStockData(@RequestBody StockData stockData)
+    {
+        return stockRepoService.insertStockData(stockData);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteAllStockData(@PathVariable List<String> id)
     {
         stockRepoService.deleteStocks(id);
         return "Deleted Successfully";
-
-
     }
 }
