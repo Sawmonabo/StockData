@@ -2,17 +2,34 @@ package com.sawmon.stockdata.controller;
 
 import com.sawmon.stockdata.model.StockData;
 import com.sawmon.stockdata.service.StockRepoService;
-import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/stocks")
-@AllArgsConstructor
+@Controller
+@RequestMapping("api/stocks")
 public class StockController
 {
     private final StockRepoService stockRepoService;
+
+    @Autowired
+    public StockController(StockRepoService stockRepoService)
+    {
+        this.stockRepoService = stockRepoService;
+    }
+
+    @GetMapping("/home")
+    public String home(Model model)
+    {
+        model.addAttribute("StockStats", stockRepoService.getAllStocks());
+        return "home";
+    }
+
     @GetMapping
     public List<StockData> fetchAllStockData()
     {
