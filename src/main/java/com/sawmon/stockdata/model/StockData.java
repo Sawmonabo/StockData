@@ -1,7 +1,6 @@
 package com.sawmon.stockdata.model;
 
 
-import java.math.BigDecimal;
 import java.util.*;
 
 import lombok.AllArgsConstructor;
@@ -33,7 +32,7 @@ public class StockData
 	private String yearLow;
 	private String timeStamp;
 
-	
+
 	public StockData(List<String> stockList)
 	{
 		this.id = stockList.get(0);

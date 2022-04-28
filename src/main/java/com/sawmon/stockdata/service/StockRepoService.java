@@ -3,10 +3,7 @@ package com.sawmon.stockdata.service;
 import com.sawmon.stockdata.model.StockData;
 import com.sawmon.stockdata.repository.StockDataRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 
