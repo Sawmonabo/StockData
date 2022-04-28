@@ -1,6 +1,7 @@
 package com.sawmon.stockdata.model;
 
 
+import java.math.BigDecimal;
 import java.util.*;
 
 import lombok.AllArgsConstructor;

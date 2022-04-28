@@ -15,7 +15,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-
 @SpringBootApplication
 public class StockdataApplication
 {
@@ -158,7 +157,7 @@ public class StockdataApplication
 		{
 			System.out.println("Please select one of the options below:");
 			System.out.println("1 - Enter new ticker(s) to add");
-			System.out.println("2 - Fetch all stock data from the MongoDB.");
+			System.out.println("2 - Fetch all stocks by company name in alphabetical order");
 			System.out.println("3 - Update all stock(s) in the MongoDB.");
 			System.out.println("4 - Delete ticker(s) from the data base.");
 
@@ -179,8 +178,8 @@ public class StockdataApplication
 					break;
 
 				case 2:
-					System.out.println("Fetch stock by ticker");
-
+					String field = "companyName";
+					System.out.println(stockRepoService.sortBy(field));
 					break;
 
 				case 3:
