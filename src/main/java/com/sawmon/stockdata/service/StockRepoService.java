@@ -5,7 +5,7 @@ import com.sawmon.stockdata.repository.StockDataRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
+
 import java.util.List;
 
 @AllArgsConstructor

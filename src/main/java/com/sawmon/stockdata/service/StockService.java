@@ -2,6 +2,7 @@ package com.sawmon.stockdata.service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -11,6 +12,7 @@ import com.sawmon.stockdata.model.StockWrapper;
 import lombok.AllArgsConstructor;
 
 import yahoofinance.YahooFinance;
+import yahoofinance.quotes.stock.StockQuote;
 
 @AllArgsConstructor
 @Service
@@ -49,6 +51,11 @@ public class StockService
 	{
 		return stock.getStock().getSymbol();
 	}
+
+	public String findStockExchange(final StockWrapper stock) throws IOException
+	{
+		return stock.getStock().getStockExchange();
+	}
 	
 	public BigDecimal findPrice(final StockWrapper stock) throws IOException
 	{
@@ -70,6 +77,33 @@ public class StockService
 	{
 		return stock.getStock().getDividend(refreshService.shouldRefresh(stock)).getAnnualYield();
 	}
-	
-	
+
+	public BigDecimal findBookValuePerShare(final StockWrapper stock) throws IOException
+	{
+		return stock.getStock().getStats(refreshService.shouldRefresh(stock)).getBookValuePerShare();
+	}
+
+	public BigDecimal findEPS(final StockWrapper stock) throws IOException
+	{
+		return stock.getStock().getStats(refreshService.shouldRefresh(stock)).getEps();
+
+	}
+
+	public BigDecimal findROE(final StockWrapper stock) throws IOException
+	{
+		return stock.getStock().getStats(refreshService.shouldRefresh(stock)).getROE();
+
+	}
+
+	public BigDecimal findYearHigh(final StockWrapper stock) throws IOException
+	{
+		return stock.getStock().getQuote(refreshService.shouldRefresh(stock)).getYearHigh();
+	}
+
+	public BigDecimal findYearLow(final StockWrapper stock) throws IOException
+	{
+		return stock.getStock().getQuote(refreshService.shouldRefresh(stock)).getYearLow();
+	}
+
+
 }
