@@ -32,7 +32,10 @@ public class StockdataApplication
 	{
 
 		Scanner scan = new Scanner(System.in);
-		return scan.nextLine().toUpperCase().split(" ");
+		String[] tickers = scan.nextLine().toUpperCase().split(" ");
+		// Removing duplicate tickers (aka Strings).
+		tickers = new HashSet<>(Arrays.asList(tickers)).toArray(new String[0]);
+		return tickers;
 	}
 
 	private static Boolean getStockData()
