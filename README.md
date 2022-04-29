@@ -45,7 +45,7 @@ $ ./mvnw spring-boot:run
 
 #### _**SpringBoot and Maven**_ 
 <p>Maven is used for building and managing any Java-based project.
-<p>SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the [spring initializr](https://start.spring.io/). For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
+<p>SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the spring-initializr - https://start.spring.io/. For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
 
 ```js
 {
@@ -125,7 +125,7 @@ A quick run down of each dependency:
 
 <br />
 	
-### Youtube video of application: demo and usage.
+### Youtube video of application: Demo and Usage.
 [![Watch the video](https://img.youtube.com/vi/NRJC9URrzqs/maxresdefault.jpg)](https://youtu.be/NRJC9URrzqs)
 	
 	
