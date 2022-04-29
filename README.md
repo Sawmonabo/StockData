@@ -1,7 +1,15 @@
-# Yahoo and MongoDB StockData API
+
+<h1 align="center">
+    Yahoo and Mongo API for StockData application
+</h1>
+
+<p align="center">
+  <img width="400" height="250" src="https://user-images.githubusercontent.com/77422313/164948693-22d3fa06-0967-4e88-84fd-e968ec38efd2.png">
+</p>
+
+<br />
 
 ## Contents
-
 - [Summary](#summary)
 - [How to Compile and Run](#how-to-compile-and-run)
 - [Project Preparation](#project-preparation)
@@ -17,12 +25,12 @@
 
 ## How to Compile and Run
 1. Make sure you first have Maven installed. You can check with the following command in the terminal:
-	```
-	$ mvn -v
-	```
-	- If you don't have Maven installed follow the guide below!
-	- This youtube video is a perfect guide for users using a MacOS (Click -> [LINK](https://www.youtube.com/watch?v=j0OnSAP-KtU)). 
-	- Note: In the video he is using a bash compiler, if you're using zsh just use that instead as your ".zsh_profile".
+```
+$ mvn -v
+```
+- If you don't have Maven installed follow the guide below!
+- This youtube video is a perfect guide for users using a MacOS (Click -> [LINK](https://www.youtube.com/watch?v=j0OnSAP-KtU)). 
+- Note: In the video he is using a bash compiler, if you're using zsh just use that instead as your ".zsh_profile".
 	
 2. First locate the directory the folder is located in.
 3. Once, you have 'cd' to the correct folder you can compile and run the program with the following command:
@@ -117,9 +125,8 @@ I first started with the eclipse ide, but then I switched over to intellij since
 ## Visualizing the Program
 
 <br />
-
-<p align="center">
-  <img width="400" height="250" src="https://user-images.githubusercontent.com/77422313/164948693-22d3fa06-0967-4e88-84fd-e968ec38efd2.png">
-</p>
-
-<br />
+	
+### Youtube video of application: demo and usage.
+[![Watch the video](https://img.youtube.com/vi/NRJC9URrzqs/maxresdefault.jpg)](https://youtu.be/NRJC9URrzqs)
+	
+	
