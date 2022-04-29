@@ -3,6 +3,7 @@
 ## Contents
 
 - [Summary](#summary)
+- [How to Compile and Run](#how-to-compile-and-run)
 - [Project Preparation](#project-preparation)
 - [Visualizing the Program](#visualizing-the-program)
 
@@ -14,12 +15,29 @@
 *  Java OOP and encapsulation methods used.
 *  Usage of a MultiValueMap hashSet.
 
+## How to Compile and Run
+1. Make sure you first have Maven installed. You can check with the following command in the terminal:
+	```
+	$ mvn -v
+	```
+	- If you don't have Maven installed follow the guide below!
+	- This youtube video is a perfect guide for users using a MacOS (Click -> [LINK](https://www.youtube.com/watch?v=j0OnSAP-KtU)). 
+	- Note: In the video he is using a bash compiler, if you're using zsh just use that instead as your ".zsh_profile".
+	
+2. First locate the directory the folder is located in.
+3. Once, you have 'cd' to the correct folder you can compile and run the program with the following command:
+```
+$ ./mvnw spring-boot:run
+```
+4. You should then see all the plug-ins and .jar files being initialzed and the application will start right after.
+
+
 
 ## Project Preparation
 
-#### SpringBoot and Maven
-Maven is used for building and managing any Java-based project.
-SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the [spring initializr](https://start.spring.io/). For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
+#### _**SpringBoot and Maven**_ 
+<p>Maven is used for building and managing any Java-based project.
+<p>SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the [spring initializr](https://start.spring.io/). For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
 
 ```js
 {
