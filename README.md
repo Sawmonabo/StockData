@@ -18,6 +18,7 @@
 ## Project Preparation
 
 #### SpringBoot and Maven
+Maven is used for building and managing any Java-based project.
 SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the [spring initializr](https://start.spring.io/). For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
 
 ```js
