@@ -119,8 +119,17 @@ A quick run down of each dependency:
 |lombok| Java annotation library which helps to reduce boilerplate code.|
 |spring-boot-starter-test| Applied Junit testing framework for Java. |
 
+<br />
+	
+### _**Docker**_ 
+- Docker Compose file using ".yaml"
+	
+<br />
 
+### _**Setting up Application Properties File**_ 	
 
+<br />
+	
 ## Visualizing the Program
 
 <br />
