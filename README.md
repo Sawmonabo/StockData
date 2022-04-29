@@ -119,7 +119,6 @@ A quick run down of each dependency:
 |lombok| Java annotation library which helps to reduce boilerplate code.|
 |spring-boot-starter-test| Applied Junit testing framework for Java. |
 
-I first started with the eclipse ide, but then I switched over to intellij since it had a smoother UI for using and deploying MongoDB.
 
 
 ## Visualizing the Program
