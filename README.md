@@ -84,14 +84,13 @@ SpringBoot is an open source Java framework that I used for the creation of my a
 A quick run down of each dependency:
 |Dependicies|Description|
 | :- | :- |
-|YahooFinanceAPI| retrieval of stock data.
-|spring-data-mongod|
-|spring-boot-starter-data-mongodb|
-|spring-boot-starter-thymeleaf|
-|spring-boot-devtools|
-|spring-boot-starter-web|
-|lombok|
-|spring-boot-starter-test|
+|YahooFinanceAPI| Stock data and Statistics.|
+|spring-boot-starter-data-mongodb| Store data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time.|
+|spring-boot-starter-thymeleaf| A modern server-side Java template engine for both web and standalone environments. Allows HTML to be correctly displayed in browsers and as static prototypes.|
+|spring-boot-devtools| Provides fast application restarts, LiveReload, and configurations for enhanced development experience.|
+|spring-boot-starter-web| Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.|
+|lombok| Java annotation library which helps to reduce boilerplate code.|
+|spring-boot-starter-test| Applied Junit testing framework for Java. |
 
 I first started with the eclipse ide, but then I switched over to intellij since it had a smoother UI for using and deploying MongoDB.
 
