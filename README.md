@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    Yahoo and Mongo API for StockData application
+    Yahoo and MongoDB API for A StockData Application
 </h1>
 
 <p align="center">
