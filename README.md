@@ -175,7 +175,7 @@ $ ./mvnw spring-boot:run
 -  MongoDB is a modern databse that can be implemented using an interface and SpringBoot.  
 	- First thing we want to do to set up our `application.properties` file located in the resource folder. Make sure to use the same reference for `port:27017` and `localhost8081` to setup corretly and have access.
 	
-	### Example `application.properties` file looks like this:
+	### Example 'application.properties' file looks like this:
 	
 	```
 	spring.data.mongodb.authentication-database=admin
