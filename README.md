@@ -13,6 +13,9 @@
 - [Summary](#summary)
 - [How to Compile and Run](#how-to-compile-and-run)
 - [Project Preparation](#project-preparation)
+	- [SpringBoot and Maven](springBoot-and-maven)
+	- [Docker](docker)
+	- [MongoDB](mongoDB)
 - [Visualizing the Program](#visualizing-the-program)
 
 ## Summary
@@ -112,8 +115,8 @@ $ ./mvnw spring-boot:run
 ```
 <br />
 
-A quick run down of each dependency:
-|Dependicies|Description|
+##### A quick run down of all the dependencies used:
+|Dependicy|Description|
 | :- | :- |
 |YahooFinanceAPI| Stock data and Statistics.|
 |spring-boot-starter-data-mongodb| Store data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time.|
