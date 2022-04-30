@@ -1,5 +1,6 @@
 package com.sawmon.stockdata;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -10,6 +11,7 @@ import com.sawmon.stockdata.service.RefreshService;
 import com.sawmon.stockdata.service.StockRepoService;
 import com.sawmon.stockdata.service.StockService;
 
+import org.apache.tomcat.jni.File;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -143,25 +145,27 @@ public class StockdataApplication
 	}
 
 	@Bean
-	CommandLineRunner runner(StockRepoService stockRepoService)
+	CommandLineRunner runner(StockRepoService stockRepoService) throws IOException
 	{
 		getMongoDB(stockRepoService);
 
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("-----------------------------------------------");
-		System.out.println("Welcome to the Yahoo StockData and MongoDB API!");
-		System.out.println("-----------------------------------------------");
 
 		while(true)
 		{
-			System.out.println("Please select one of the options below:");
-			System.out.println("1 - Enter new ticker(s) to add");
-			System.out.println("2 - Fetch all stocks by company name in alphabetical order");
-			System.out.println("3 - Update all stock(s) in the MongoDB.");
-			System.out.println("4 - Delete ticker(s) from the data base.");
+			System.out.println("\n");
+			System.out.println("----------------------------------------------------------");
+			System.out.println("				The StockData Menu System");
+			System.out.println("----------------------------------------------------------");
+			System.out.println(" Please select one of the options below:");
+			System.out.println(" 1 - Enter new ticker(s) to add");
+			System.out.println(" 2 - Fetch all stocks by company name in alphabetical order");
+			System.out.println(" 3 - Update all stock(s) in the MongoDB.");
+			System.out.println(" 4 - Delete ticker(s) from the data base.");
+			System.out.println(" 5 - Save all ticker(s) in the data base to a '.txt' file.");
 
-			System.out.println("Enter your choice:");
+			System.out.println("\n Enter your choice: ");
 			int choice = scan.nextInt();//accept user input
 
 			switch (choice)
@@ -196,6 +200,17 @@ public class StockdataApplication
 					break;
 
 				case 5:
+					System.out.println("Writing 'StockData.txt' to the folder 'stockRecordFiles' ...");
+					FileWriter myWriter = new FileWriter("stockRecordFiles/StockData.txt");
+					List<StockData> data = stockRepoService.sortBy("companyName");
+
+					for(StockData str: data) {
+						myWriter.write(str + System.lineSeparator());
+					}
+					myWriter.close();
+					break;
+
+				case 6:
 					System.out.println("Exiting the application");
 					scan.close();
 					System.exit(0);
