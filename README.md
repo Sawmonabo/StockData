@@ -122,11 +122,54 @@ A quick run down of each dependency:
 <br />
 	
 ### _**Docker**_ 
-- Docker Compose file using ".yaml"
+- We use docker desktop to spin up a container to run our database. It's free to download and create an account and can be found at the link -> [here!](https://www.docker.com/products/docker-desktop/). Note, make sure you choose the correct processor chip or you'll end up like me wondering why it won't start installing.
+	- After downloading Docker Desktop, you will need to make sure you have a "Docker Compose file" setup for this application as ".yaml" file. 
+	- If you're using my version make sure you get the password/username as well as the port(s) we will use to intiate a localhost for the database. 
+	
+	### Example docker-compose.yaml looks like this:
+	```js
+	version: "3.9"  # optional since v1.27.0
+	services:
+	  web:
+	    build: .
+	    ports:
+	      - "8000:5000"
+	    volumes:
+	      - .:/code
+	      - logvolume01:/var/log
+	    links:
+	      - redis
+	  redis:
+	    image: redis
+	volumes:
+	  logvolume01: {}	
+
+	```
+	- Next you should run your docker compose file so the container is created.
 	
 <br />
 
-### _**Setting up Application Properties File**_ 	
+### MongoDB
+-  MongoDB is a modern databse that can be implemented using an interface and SpringBoot.  
+	- First thing we want to do to set up our "application.properties" file located in the resource folder. Make sure to use your correct port to create the localhost.
+	
+	### Example application.properties file looks like this:
+	
+	```
+	spring.data.mongodb.authentication-database=admin
+	spring.data.mongodb.username=rootuser
+	spring.data.mongodb.password=rootpass
+	spring.data.mongodb.database=StockData
+	spring.data.mongodp.port=27017
+	spring.data.mongodb.host=localhost
+	```
+	- This file gets scanned and setup when we first initialize our program with SpringBoot.
+	- The last thing you must make sure to do is create a database on Mongo and name it "StockData" for it to connect to.
+		- This can be done through MongoExpress which should be accessable through the localport you initialized. In my case I can access this just by typing localhost:8081 on my browser URL.
+	- Once connected to MongoExpress just 'click' on the create a database button and make sure you name it accordingly , in my case, "StockData". 
+	
+That's all for setting up the appliation! You can now compile/run the program and store data to your container!
+	
 
 <br />
 	
