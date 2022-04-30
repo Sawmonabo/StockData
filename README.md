@@ -133,7 +133,7 @@ $ ./mvnw spring-boot:run
 	- After downloading Docker Desktop, you will need to make sure you have a `docker-compose.yaml` file in the StockData package for setup of the container.
 	- Make sure you set the correct `port:27017` for each service in order to load the `localhost8081` for the database. 
 	
-	#### Example docker-compose.yaml looks like this:
+	#### Example 'docker-compose.yaml' looks like this:
 	```js
 	version: "3.8"
 	services:
