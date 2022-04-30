@@ -46,70 +46,72 @@ $ ./mvnw spring-boot:run
 ## Project Preparation
 
 ### _**SpringBoot and Maven**_ 
-<p>Maven is used for building and managing any Java-based project.
-<p>SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the spring-initializr - https://start.spring.io/. For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
+* Maven is used for building and managing any Java-based project.
+* SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the spring-initializr - https://start.spring.io/. For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
 
 ```js
-{
- 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		
-		<dependency>
-		    <groupId>com.yahoofinance-api</groupId>
-		    <artifactId>YahooFinanceAPI</artifactId>
-		    <version>3.15.0</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.springframework.data</groupId>
-		    <artifactId>spring-data-mongodb</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
+<dependencies>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter</artifactId>
+	</dependency>
 
-		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
+	<dependency>
+	    <groupId>com.yahoofinance-api</groupId>
+	    <artifactId>YahooFinanceAPI</artifactId>
+	    <version>3.15.0</version>
+	</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
+	<dependency>
+	    <groupId>org.springframework.data</groupId>
+	    <artifactId>spring-data-mongodb</artifactId>
+	</dependency>
 
-		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-mongodb</artifactId>
+	</dependency>
 
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-	</dependencies>
-},
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-devtools</artifactId>
+		<scope>runtime</scope>
+		<optional>true</optional>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<optional>true</optional>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<scope>test</scope>
+		<exclusions>
+			<exclusion>
+				<groupId>org.junit.vintage</groupId>
+				<artifactId>junit-vintage-engine</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+</dependencies>
+
 ```
+<br />
+
 A quick run down of each dependency:
 |Dependicies|Description|
 | :- | :- |
@@ -128,7 +130,7 @@ A quick run down of each dependency:
 	- After downloading Docker Desktop, you will need to make sure you have a `docker-compose.yaml` file in the StockData package for setup of the container.
 	- Make sure you set the correct `port:27017` for each service in order to load the `localhost8081` for the database. 
 	
-	### Example docker-compose.yaml looks like this:
+	#### Example docker-compose.yaml looks like this:
 	```js
 	version: "3.8"
 	services:
@@ -160,7 +162,9 @@ A quick run down of each dependency:
 	    default: 
 		name: mongodb_network
 	```
-	- Next you should run your docker compose file so the container is created.
+<br />
+
+* Next you should run your `docker-compose.yaml` file so the container is created and initialized.
 	
 <br />
 
@@ -180,12 +184,12 @@ A quick run down of each dependency:
 	```
 	- This file gets scanned and setup when we first initialize our program with SpringBoot.
 	- The last thing you must make sure to do is create a database on Mongo and name it "StockData" for it to connect to.
-		- This can be done through MongoExpress which should be accessable through the `localport8081` you initialized. It can be accessed by typing `localhost:8081` on to the browser URL.
+		- This can be done through MongoExpress which should be accessable through the `localport:8081` you initialized. It can be accessed by typing `localhost:8081` on to the browser URL.
 	- Once connected to MongoExpress just 'click' on the create a database button and make sure you name it accordingly , "StockData". 
-	
+<br />
+
 That's all for setting up the appliation! You can now compile/run the program and store data to the container!
 	
-
 <br />
 	
 ## Visualizing the Program
