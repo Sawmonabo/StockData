@@ -25,13 +25,15 @@
 
 ## How to Compile and Run
 1. Make sure you first have Maven installed. You can check with the following command in the terminal:
+
 ```
 $ mvn -v
 ```
-- If you don't have Maven installed follow the guide below!
-- This youtube video is a perfect guide for users using a MacOS (Click -> [LINK](https://www.youtube.com/watch?v=j0OnSAP-KtU)). 
-- Note: In the video he is using a bash compiler, if you're using zsh just use that instead as your ".zsh_profile".
-	
+
+> * If you don't have Maven installed follow the guide below!
+> * This youtube video is a perfect guide for users using a MacOS (Click -> [LINK](https://www.youtube.com/watch?v=j0OnSAP-KtU)). 
+> * Note: In the video he is using a bash compiler, if you're using zsh just use that instead as your ".zsh_profile".
+
 2. First locate the directory the folder is located in.
 3. Once, you have 'cd' to the correct folder you can compile and run the program with the following command:
 ```
@@ -43,7 +45,7 @@ $ ./mvnw spring-boot:run
 
 ## Project Preparation
 
-#### _**SpringBoot and Maven**_ 
+### _**SpringBoot and Maven**_ 
 <p>Maven is used for building and managing any Java-based project.
 <p>SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the spring-initializr - https://start.spring.io/. For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
 
@@ -123,27 +125,40 @@ A quick run down of each dependency:
 	
 ### _**Docker**_ 
 - We use docker desktop to spin up a container to run our database. It's free to download and create an account and can be found at the link -> [here!](https://www.docker.com/products/docker-desktop/). Note, make sure you choose the correct processor chip or you'll end up like me wondering why it won't start installing.
-	- After downloading Docker Desktop, you will need to make sure you have a "Docker Compose file" setup for this application as ".yaml" file. 
-	- If you're using my version make sure you get the password/username as well as the port(s) we will use to intiate a localhost for the database. 
+	- After downloading Docker Desktop, you will need to make sure you have a `docker-compose.yaml` file in the StockData package for setup of the container.
+	- Make sure you set the correct `port:27017` for each service in order to load the `localhost8081` for the database. 
 	
 	### Example docker-compose.yaml looks like this:
 	```js
-	version: "3.9"  # optional since v1.27.0
+	version: "3.8"
 	services:
-	  web:
-	    build: .
-	    ports:
-	      - "8000:5000"
-	    volumes:
-	      - .:/code
-	      - logvolume01:/var/log
-	    links:
-	      - redis
-	  redis:
-	    image: redis
-	volumes:
-	  logvolume01: {}	
+	    mongodb:
+		image: mongo
+		container_name: mongodb
+		ports: 
+		    - 27017:27017
+		volumes: 
+		    - data:/data
+		environment: 
+		    - MONGO_INITDB_ROOT_USERNAME=rootuser
+		    - MONGO_INITDB_ROOT_PASSWORD=rootpass
+	    mongo-express:
+		image: mongo-express
+		container_name: mongo-express
+		restart: always
+		ports:
+		    - 8081:8081
+		environment:
+		    - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
+		    - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
+		    - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+		    - ME_CONFIG_MONGODB_SERVER=mongodb
+	volumes: 
+	    data: {} 
 
+	networks:
+	    default: 
+		name: mongodb_network
 	```
 	- Next you should run your docker compose file so the container is created.
 	
@@ -151,9 +166,9 @@ A quick run down of each dependency:
 
 ### MongoDB
 -  MongoDB is a modern databse that can be implemented using an interface and SpringBoot.  
-	- First thing we want to do to set up our "application.properties" file located in the resource folder. Make sure to use your correct port to create the localhost.
+	- First thing we want to do to set up our `application.properties` file located in the resource folder. Make sure to use the same reference for `port:27017` and `localhost8081` to setup corretly and have access.
 	
-	### Example application.properties file looks like this:
+	### Example `application.properties` file looks like this:
 	
 	```
 	spring.data.mongodb.authentication-database=admin
@@ -165,10 +180,10 @@ A quick run down of each dependency:
 	```
 	- This file gets scanned and setup when we first initialize our program with SpringBoot.
 	- The last thing you must make sure to do is create a database on Mongo and name it "StockData" for it to connect to.
-		- This can be done through MongoExpress which should be accessable through the localport you initialized. In my case I can access this just by typing localhost:8081 on my browser URL.
-	- Once connected to MongoExpress just 'click' on the create a database button and make sure you name it accordingly , in my case, "StockData". 
+		- This can be done through MongoExpress which should be accessable through the `localport8081` you initialized. It can be accessed by typing `localhost:8081` on to the browser URL.
+	- Once connected to MongoExpress just 'click' on the create a database button and make sure you name it accordingly , "StockData". 
 	
-That's all for setting up the appliation! You can now compile/run the program and store data to your container!
+That's all for setting up the appliation! You can now compile/run the program and store data to the container!
 	
 
 <br />
