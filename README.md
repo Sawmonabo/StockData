@@ -20,8 +20,8 @@
 
 ## Summary
 *  The application is able to fetch stock data on any ticker provided by the YahooFinance API, as well as, storing data to a MongoDB database. 
-*  In this application we used SpringBoot and Maven to help reduce boilerplate code and to use different dependiccies.
-*  Used a Full Stack solution to create a front-end application to the YahooFinance API and a back-end application using MongoDB to create a local data base. 
+*  In this application we used SpringBoot and Maven to help reduce boilerplate code and to use different dependencies.
+*  Used a Full Stack solution to create a front-end application to the YahooFinance API and a back-end application using MongoDB to create a local database. 
 *  Integration of Service/Model/Application packages to provide clarity for class usage.
 *  Java OOP and encapsulation methods used.
 *  Usage of a MultiValueMap hashSet.
@@ -34,7 +34,7 @@ $ mvn -v
 ```
 
 > * If you don't have Maven installed follow the guide below!
-> * This youtube video is a perfect guide for users using a MacOS (Click -> [LINK](https://www.youtube.com/watch?v=j0OnSAP-KtU)). 
+> * This YouTube video is a perfect guide for users using a MacOS (Click -> [LINK](https://www.youtube.com/watch?v=j0OnSAP-KtU)). 
 > * Note: In the video he is using a bash compiler, if you're using zsh just use that instead as your ".zsh_profile".
 
 2. First locate the directory the folder is located in.
@@ -42,7 +42,7 @@ $ mvn -v
 ```
 $ ./mvnw spring-boot:run
 ```
-4. You should then see all the plug-ins and .jar files being initialzed and the application will start right after.
+4. You should then see all the plug-ins and .jar files being initialized and the application will start right after.
 
 
 
@@ -50,7 +50,7 @@ $ ./mvnw spring-boot:run
 
 ### _**SpringBoot and Maven**_ 
 * Maven is used for building and managing any Java-based project.
-* SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations and runnablity. To initialize the project I visited the spring-initializr - https://start.spring.io/. For this applicatrion I used several dependicies when I have included in the pom.xml snippet below.
+* SpringBoot is an open source Java framework that I used for the creation of my application for minimum configurations. To initialize the project I visited the spring-initializr - https://start.spring.io/. For this application I used several dependencies when I have included in the pom.xml snippet below.
 
 ```js
 
@@ -116,20 +116,20 @@ $ ./mvnw spring-boot:run
 <br />
 
 ##### A quick run down of all the dependencies used:
-|Dependicy|Description|
+|Dependency|Description|
 | :- | :- |
 |YahooFinanceAPI| Stock data and Statistics.|
 |spring-boot-starter-data-mongodb| Store data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time.|
 |spring-boot-starter-thymeleaf| A modern server-side Java template engine for both web and standalone environments. Allows HTML to be correctly displayed in browsers and as static prototypes.|
 |spring-boot-devtools| Provides fast application restarts, LiveReload, and configurations for enhanced development experience.|
-|spring-boot-starter-web| Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.|
+|spring-boot-starter-web| Build web, including REST-full, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.|
 |lombok| Java annotation library which helps to reduce boilerplate code.|
 |spring-boot-starter-test| Applied Junit testing framework for Java. |
 
 <br />
 	
 ### _**Docker**_ 
-- We use docker desktop to spin up a container to run our database. It's free to download and create an account and can be found at the link -> [here!](https://www.docker.com/products/docker-desktop/). Note, make sure you choose the correct processor chip or you'll end up like me wondering why it won't start installing.
+- We use docker desktop to spin up a container to run our database. It's free to download and create an account and can be found at the link -> [here!](https://www.docker.com/products/docker-desktop/). Note, make sure you choose the correct processor chip, or you'll end up like me wondering why it won't start installing.
 	- After downloading Docker Desktop, you will need to make sure you have a `docker-compose.yaml` file in the StockData package for setup of the container.
 	- Make sure you set the correct `port:27017` for each service in order to load the `localhost8081` for the database. 
 	
@@ -172,8 +172,8 @@ $ ./mvnw spring-boot:run
 <br />
 
 ### MongoDB
--  MongoDB is a modern databse that can be implemented using an interface and SpringBoot.  
-	- First thing we want to do to set up our `application.properties` file located in the resource folder. Make sure to use the same reference for `port:27017` and `localhost8081` to setup corretly and have access.
+-  MongoDB is a modern database that can be implemented using an interface and SpringBoot.  
+	- First thing we want to do to set up our `application.properties` file located in the resource folder. Make sure to use the same reference for `port:27017` and `localhost8081` to set up correctly and have access.
 	
 	### Example 'application.properties' file looks like this:
 	
@@ -187,11 +187,11 @@ $ ./mvnw spring-boot:run
 	```
 	- This file gets scanned and setup when we first initialize our program with SpringBoot.
 	- The last thing you must make sure to do is create a database on Mongo and name it "StockData" for it to connect to.
-		- This can be done through MongoExpress which should be accessable through the `localport:8081` you initialized. It can be accessed by typing `localhost:8081` on to the browser URL.
+		- This can be done through MongoExpress which should be accessible through the `localport:8081` you initialized. It can be accessed by typing `localhost:8081` on to the browser URL.
 	- Once connected to MongoExpress just 'click' on the create a database button and make sure you name it accordingly , "StockData". 
 <br />
 
-That's all for setting up the appliation! You can now compile/run the program and store data to the container!
+That's all for setting up the application! You can now compile/run the program and store data to the container!
 	
 <br />
 	
@@ -199,7 +199,7 @@ That's all for setting up the appliation! You can now compile/run the program an
 
 <br />
 	
-### Youtube video of application: Demo and Usage.
+### YouTube video of application: Demo and Usage.
 [![Watch the video](https://img.youtube.com/vi/NRJC9URrzqs/maxresdefault.jpg)](https://youtu.be/NRJC9URrzqs)
 	
 	
