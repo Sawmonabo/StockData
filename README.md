@@ -19,9 +19,9 @@
 - [Visualizing the Program](#visualizing-the-program)
 
 ## Summary
-*  The application is able to fetch stock data on any ticker provided by the YahooFinance API, as well as, storing data to a MongoDB database. 
-*  In this application we used SpringBoot and Maven to help reduce boilerplate code and to use different dependencies.
-*  Used a Full Stack solution to create a front-end application to the YahooFinance API and a back-end application using MongoDB to create a local database. 
+*  The application is able to fetch stock data from the YahooFinance API on any ticker provided by user input, as well as, storing data to a MongoDB database. 
+*  CRUD operations to and from the MongoDB database.
+*  Spring Boot and Maven are used to manage dependencies and jumpstart the project.
 *  Integration of Service/Model/Application packages to provide clarity for class usage.
 *  Java OOP and encapsulation methods used.
 *  Usage of a MultiValueMap hashSet.
